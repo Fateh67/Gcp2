@@ -6,7 +6,7 @@ describe("GET /", () => {
     const response = await request(app).get("/");
     expect(response.status).toEqual(200);
     expect(response.body.data).toBeNull();
-    expect(response.body.msg).toEqual("API is up");
+    expect(response.body.msg).toEqual("API is hup");
   });
 });
 

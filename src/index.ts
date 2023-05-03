@@ -10,6 +10,29 @@ API.get("/", (req: Request, res: Response) => {
   });
 });
 
+API. get("/error", (req: Request, res: Response) => {
+  res. status(500).json({
+    msg: "L'API est en panne ",
+    données : null,
+  });
+});
+
+API. get("/crash", (req: Request, res: Response) => {
+  throw new Error("api has crashed");
+});
+
+API.get("/log", (req: Request, res: Response) => { 
+  console.info("api is logging info");
+  console.log("api is just logging")
+  console.info(
+    JSON.stringify({
+      msg: "api is logging structured info",
+      some_key: "some_value",
+    })
+  );
+});
+
+
 export const server = API.listen(8080, () => {
   console.log("server started on port 8080");
 });

@@ -21,7 +21,7 @@ API. get("/crash", (req: Request, res: Response) => {
   throw new Error("api has crashed");
 });
 
-API.get(", log", (req: Request, res: Response) => { 
+API.get("/log", (req: Request, res: Response) => { 
   console.info("api is logging info");
   console.log("api is just logging")
   console.info(
